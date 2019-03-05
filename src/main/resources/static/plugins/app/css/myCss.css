@@ -1,0 +1,174 @@
+.select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
+    border: 1px solid #d2d6de;
+    border-radius: 0 !important;
+    padding: 5px 0px !important;
+    height: 34px !important;
+}
+
+[class^='select2'] {
+    border-radius: 0px !important;
+}
+/* modal 多次弹窗导致页面左移 */
+body {
+    padding-right: 0px !important;
+}
+
+*.modal-open {
+    overflow-y: auto;
+    padding-right: 0 !important;
+}
+/**/
+.table {
+    font-size: 14px;
+    text-align: center;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+/* 禁用*/
+
+input.content {
+    min-height: 0 !important;
+    padding: 6px 12px !important;
+    margin: 0 !important;
+}
+
+input.label:empty {
+    display: inherit !important;
+}
+
+.pagination-input {
+    position: relative;
+    display: inline-block;
+    padding: 4px 11px;
+    width: 100%;
+    height: 28px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(0,0,0,.65);
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    margin: 0 8px;
+    width: 50px;
+}
+
+.pagination-input,input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input.label {
+    display: inherit !important;
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+    font-weight: inherit !important;
+    line-height: 1.42857143 !important;
+    color: #555 !important;
+    text-align: inherit !important;
+    white-space: inherit !important;
+    vertical-align: inherit !important;
+    border-radius: inherit !important;
+}
+
+.box-show {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+a.editable-empty {
+    color: #3c8dbc;
+    border-bottom: none !important;
+}
+
+.form-group > label.asterisk:after {
+    content: " *";
+    color: red;
+}
+
+.mailbox-attachments li {
+    width: 300px !important;
+}
+
+/* angular-ui-tree */
+.angular-ui-tree-handle {
+    background: #f8faff;
+    border: 1px solid #dae2ea;
+    color: #7c9eb2;
+    padding: 10px 10px;
+}
+
+.angular-ui-tree-handle:hover {
+    color: #438eb9;
+    background: #f4f6f7;
+    border-color: #dce2e8;
+}
+
+.angular-ui-tree-placeholder {
+    background: #f0f9ff;
+    border: 2px dashed #bed2db;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+tr.angular-ui-tree-empty {
+    height: 100px
+}
+
+.group-title {
+    background-color: #687074 !important;
+    color: #FFF !important;
+}
+
+/* --- Tree --- */
+.tree-node {
+    border: 1px solid #dae2ea;
+    background: #f8faff;
+    color: #7c9eb2;
+}
+
+.nodrop {
+    background-color: #f2dede;
+}
+
+.tree-node-content {
+    margin: 10px;
+}
+
+.tree-handle {
+    padding: 10px;
+    background: #428bca;
+    color: #FFF;
+    margin-right: 10px;
+}
+
+.angular-ui-tree-handle:hover {
+}
+
+.angular-ui-tree-placeholder {
+    background: #f0f9ff;
+    border: 2px dashed #bed2db;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.modal-content {
+    border-radius: 6px;
+}

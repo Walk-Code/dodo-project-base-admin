@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.dodo.project.base</groupId>
+        <artifactId>dodo-project-base</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.dodo.project.base.admin</groupId>
+    <artifactId>dodo-project-base-admin</artifactId>
+    <description>基础后台模块</description>
+
+    <dependencies>
+        <!-- start JSP支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- start 用户编译jsp-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+        <!-- end 用户编译jsp-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <!-- end jsp支持 -->
+
+        <!-- start 依赖基础组件dao层 -->
+        <dependency>
+            <groupId>com.dodo.project.base.admin.dao</groupId>
+            <artifactId>dodo-project-base-admin-dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- end 依赖基础组件dao层 -->
+
+        <!-- start 依赖基础组件web层 -->
+        <dependency>
+            <groupId>com.dodo.project.base.web</groupId>
+            <artifactId>dodo-project-base-web</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- end 依赖基础组件web层 -->
+
+        <!-- start 依赖基础组件权限控制 -->
+        <dependency>
+            <groupId>com.dodo.project.base.permissions</groupId>
+            <artifactId>dodo-base-permissions</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- end 依赖基础组件权限控制 -->
+
+        <!-- start 依赖库组件验证码模块 -->
+        <dependency>
+            <groupId>com.github.penggle</groupId>
+            <artifactId>kaptcha</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+        <!-- end 依赖库组件验证码模块 -->
+
+        <!-- start Spring 官方提供的热部署插件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+        <!-- end Spring 官方提供的热部署插件 &ndash;&gt;-->
+
+        <!--start dodo redis -->
+        <dependency>
+             <groupId>com.dodo.project.base.cache.redis</groupId>
+             <artifactId>dodo-project-base-redis</artifactId>
+             <version>1.0-SNAPSHOT</version>
+         </dependency>
+        <!-- end dodo redis-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-properties-migrator</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+</project>
