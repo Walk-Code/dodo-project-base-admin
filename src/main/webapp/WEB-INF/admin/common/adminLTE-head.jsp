@@ -28,7 +28,7 @@
 <%-- 引入断言工具chai.js --%>
 <script src="/plugins/chaiJs/js/chai.js"></script>
 <!-- jQuery 2.1.4 -->
-<script src="/plugins/adminLTE/bower_components/jQuery/dist/jQuery.js"></script>
+<script src="/plugins/adminLTE/bower_components/jquery/dist/jquery.js"></script>
 <!-- Bootstrap 3.3.5 -->
 <script src="/plugins/adminLTE/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <!-- Angular.js插件 -->

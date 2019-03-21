@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="auth" uri="http://auth.dodo1.com/tags" %>
+<%@ taglib prefix="auth" uri="http://auth.dodo.com/tags" %>
 <html ng-app="app">
 <head>
     <title>角色列表</title>
@@ -87,5 +87,5 @@
 </body>
 <jsp:include page="addRole-modal.jsp"/>
 <jsp:include page="index-js.jsp"/>
-<jsp:include page="../../common/footer.jsp" />
+<jsp:include page="../../common/footer.jsp"/>
 </html>
