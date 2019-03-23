@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="auth" uri="http://auth.dodo1.com/tags" %>
+<%@ taglib prefix="auth" uri="http://auth.dodo.com/tags" %>
 <html ng-app="app">
 <head>
     <title>系统菜单栏</title>

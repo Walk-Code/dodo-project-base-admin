@@ -2,7 +2,9 @@ package com.dodo.project.base.admin.bean;
 
 import com.dodo.project.base.admin.dao.system.model.SystemMenu;
 
-/**
+import java.util.Date;
+
+/*
  * <b>SystemMenusExpandBean</b></br>
  *
  * <pre>

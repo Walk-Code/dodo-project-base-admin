@@ -58,6 +58,8 @@
                                                ng-model="isAuthAllChecked"
                                                ng-change="selectedAllAuth()"/>
                                         <span ng-bind="'全部加入权限控制'"></span>
+                                        <span class="label lable-error"
+                                              ng-bind="'功能未实现'"></span>
                                     </label>
                                 </div>
                             </td>
@@ -69,6 +71,8 @@
                                                ng-model="isMenuAllChecked"
                                                ng-change="selectedAllMenu()"/>
                                         <span ng-bind="'全部设为菜单'"></span>
+                                        <span class="label lable-error"
+                                              ng-bind="'功能未实现'"></span>
                                     </label>
                                 </div>
                             </td>
@@ -89,6 +93,7 @@
                                                ng-model="node.auth"
                                                ng-checked="node.auth"
                                                ng-change="checkUncheckAuthHeader()"
+                                               ng-click="changeAuth(node)"
                                         />
                                         <span ng-bind="'加入权限控制'"></span>
                                     </label>
@@ -101,7 +106,7 @@
                                         <input type="checkbox" icheck
                                                ng-model="node.menu"
                                                ng-checked="node.menu"
-                                               ng-change="checkUncheckMenuHeader()"
+                                               ng-change="checkUncheckMenuHeader();changeMenu(node)"
                                         />
                                         <span ng-bind="'设为菜单'"></span>
                                     </label>

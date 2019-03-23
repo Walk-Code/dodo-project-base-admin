@@ -1,9 +1,14 @@
 package com.dodo.project.base.admin.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-/**
+/*
  * <b>MenuTreeNodeBean</b></br>
  *
  * <pre>
@@ -14,6 +19,7 @@ import java.util.List;
  * @Date 2018/12/3 19:15
  * @Since JDK 1.8
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class MenuTreeNodeBean {
 	private int     id;
 	private int     pid;
@@ -23,8 +29,12 @@ public class MenuTreeNodeBean {
 	private String  targetType;
 	private String  urlType;
 	private String  url;
+	@JsonProperty
 	private boolean isMenu;
+	@JsonProperty
 	private boolean isAuth;
+
+	private Date updateTime;
 
 	private List<MenuTreeNodeBean> children = new ArrayList<>();
 
@@ -114,5 +124,13 @@ public class MenuTreeNodeBean {
 
 	public void setSeparator(String separator) {
 		this.separator = separator;
+	}
+
+	public Date getUpdateTime() {
+		return updateTime;
+	}
+
+	public void setUpdateTime(Date updateTime) {
+		this.updateTime = updateTime;
 	}
 }

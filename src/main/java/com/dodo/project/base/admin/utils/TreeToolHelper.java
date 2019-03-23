@@ -75,6 +75,7 @@ public class TreeToolHelper {
 			menuTreeNodeBean.setUrl(systemMenu.getUrl());
 			menuTreeNodeBean.setAuth(systemMenu.isAuth());
 			menuTreeNodeBean.setMenu(systemMenu.isMenu());
+			menuTreeNodeBean.setUpdateTime(systemMenu.getUpdateTime());
 			menuTreeNodeBeans.add(menuTreeNodeBean);
 		}
 

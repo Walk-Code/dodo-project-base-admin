@@ -61,6 +61,30 @@
         };
 
         $scope.getList();
+
+        // 加入权限控制or设为菜单
+        $scope.setUrlFeatures = function (node) {
+            $scope.ajax({
+                method: 'POST',
+                url: '/systenMenusNode/setUrlFeatures',
+                data: $.param({
+                    'menuId': node.id,
+                    'isAuth': node.auth,
+                    'isMenu': node.menu
+                }),
+                success: function (status, data) {
+                    $scope.getList();
+                }
+            });
+        }
+        
+        $scope.changeAuth = function (node) {
+            $scope.setUrlFeatures(node);
+        }
+
+        $scope.changeMenu = function (node) {
+            $scope.setUrlFeatures(node);
+        }
     });
 
     // 初始化angularjs指令

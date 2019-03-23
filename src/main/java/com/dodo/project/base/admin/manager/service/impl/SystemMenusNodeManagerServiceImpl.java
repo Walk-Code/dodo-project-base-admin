@@ -4,12 +4,18 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.dodo.project.base.admin.bean.MenuTreeNodeBean;
 import com.dodo.project.base.admin.bean.SystemMenusExpandBean;
+import com.dodo.project.base.admin.dao.system.model.SystemMenu;
+import com.dodo.project.base.admin.dao.system.model.SystemMenuNode;
 import com.dodo.project.base.admin.dao.system.service.SystemMenuDaoService;
+import com.dodo.project.base.admin.dao.system.service.SystemMenuNodeDaoService;
 import com.dodo.project.base.admin.manager.service.SystemMenusNodeManagerService;
 import com.dodo.project.base.admin.utils.TreeToolHelper;
 import com.dodo.project.base.dao.jfinal.utils.JFinalORMConvertDTOHelper;
+import com.dodo.project.base.exception.utils.AssertHelper;
 import com.dodo.project.base.exception.utils.JsonHelper;
 import com.jfinal.plugin.activerecord.Record;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -31,9 +37,13 @@ import java.util.Map;
  */
 @Service
 public class SystemMenusNodeManagerServiceImpl implements SystemMenusNodeManagerService {
+	private static final Logger log = LoggerFactory.getLogger(SystemMenusNodeManagerServiceImpl.class);
 
 	@Resource
 	private SystemMenuDaoService systemMenuDaoService;
+
+	@Resource
+	private SystemMenuNodeDaoService systemMenuNodeDaoService;
 
 	@Override
 	public List<SystemMenusExpandBean> getList() {
@@ -52,8 +62,11 @@ public class SystemMenusNodeManagerServiceImpl implements SystemMenusNodeManager
 	}
 
 	@Override
-	public boolean save() {
-		return false;
+	public boolean setUrlFeatures(SystemMenuNode systemMenuNode) {
+		SystemMenu menu = systemMenuDaoService.findById(SystemMenu.class, systemMenuNode.getMenuId());
+		AssertHelper.notNull(menu, "节点数据发生改变，请刷新页面。");
+
+		return systemMenuNodeDaoService.updateNode(systemMenuNode.getMenuId(), systemMenuNode.getIsAuth(), systemMenuNode.getIsMenu());
 	}
 
 
@@ -79,6 +92,7 @@ public class SystemMenusNodeManagerServiceImpl implements SystemMenusNodeManager
 				systemMenu.setUrl(menuTreeNodeBean.getUrl());
 				systemMenu.setAuth(menuTreeNodeBean.isAuth());
 				systemMenu.setMenu(menuTreeNodeBean.isMenu());
+				systemMenu.setUpdateTime(menuTreeNodeBean.getUpdateTime());
 				systems.add(systemMenu);
 			}
 

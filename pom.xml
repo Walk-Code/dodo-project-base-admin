@@ -12,7 +12,7 @@
 
     <groupId>com.dodo.project.base.admin</groupId>
     <artifactId>dodo-project-base-admin</artifactId>
-    <packaging>war</packaging>
+    <!--<packaging>war</packaging>-->
     <description>基础后台模块</description>
 
     <properties>
@@ -137,6 +137,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.4.2.RELEASE</version>
                 <configuration>
+                    <!-- 帮助定义构件输出的一些附属构件,附属构件与主构件对应，有时候需要加上classifier才能唯一的确定该构件 不能直接定义项目的classifer,因为附属构件不是项目直接默认生成的，而是由附加的插件帮助生成的 -->
+                    <classifier>exec</classifier>
                     <addResources>true</addResources>
                 </configuration>
                 <executions>

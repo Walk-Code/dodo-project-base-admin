@@ -10,7 +10,7 @@
 <head>
     <title>系统参数配置</title>
     <jsp:include page="../../common/adminLTE-head.jsp"/>
-    <%@ taglib prefix="auth" uri="http://auth.dodo1.com/tags" %>
+    <%@ taglib prefix="auth" uri="http://auth.dodo.com/tags" %>
 </head>
 <body ng-controller="myBody">
 <section class="content-header">
